@@ -1,47 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2017 RedEngine Ltd, http://www.redengine.co.nz. All rights reserved. -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>net.stickycode.parent</groupId>
+    <artifactId>sticky-parent-distribution8</artifactId>
+    <version>2.3</version>
+  </parent>
 
   <groupId>net.stickycode.parent</groupId>
   <artifactId>sticky-parent-jar8</artifactId>
-  <version>2.3-SNAPSHOT</version>
+  <version>3.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>${project.artifactId}-1</name>
+  <name>${project.artifactId}-3</name>
+  <description>The definition of StickyCode library projects</description>
+  <inceptionYear>2010</inceptionYear>
+  <url>https://github.com/StickySource/parent</url>
 
   <scm>
-    <connection>${git.url}</connection>
     <developerConnection>${git.url}</developerConnection>
     <tag>HEAD</tag>
   </scm>
-
-  <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <target.dir>target</target.dir>
-    <output.basedir>${basedir}</output.basedir>
-  </properties>
-
-  <build>
-    <directory>${output.basedir}/${target.dir}</directory>
-    <outputDirectory>${output.basedir}/${target.dir}/classes</outputDirectory>
-    <testOutputDirectory>${output.basedir}/${target.dir}/test-classes</testOutputDirectory>
-
-    <plugins>
-      <plugin>
-        <groupId>io.repaint.maven</groupId>
-        <artifactId>tiles-maven-plugin</artifactId>
-        <version>2.10</version>
-        <extensions>true</extensions>
-        <configuration>
-          <tiles>
-            <tile>net.stickycode.tile:sticky-tile-upload-nexus:[1,2)</tile>
-            <tile>net.stickycode.tile:sticky-tile-release:[1,2)</tile>
-          </tiles>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 
   <profiles>
     <profile>
@@ -61,7 +43,6 @@
             <extensions>true</extensions>
             <configuration>
               <tiles>
-                <tile>net.stickycode.tile:sticky-tile-upload-nexus:[1,2)</tile>
                 <tile>net.stickycode.tile:sticky-tile-parent-jar:[1,2)</tile>
               </tiles>
             </configuration>
@@ -69,18 +50,6 @@
         </plugins>
       </build>
     </profile>
-    
-    <profile>
-      <id>running-in-eclipse</id>
-      <activation>
-        <property>
-          <name>m2e.version</name>
-        </property>
-      </activation>
-      <properties>
-        <target.dir>target-eclipse</target.dir>
-      </properties>
-    </profile>
   </profiles>
-
+  
 </project>
