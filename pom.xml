@@ -12,7 +12,7 @@
 
   <groupId>net.stickycode.parent</groupId>
   <artifactId>sticky-parent-jar8</artifactId>
-  <version>3.1</version>
+  <version>3.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>${project.artifactId}-3</name>
@@ -22,7 +22,7 @@
 
   <scm>
     <developerConnection>${git.url}</developerConnection>
-    <tag>sticky-parent-jar8-3.1</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <profiles>
